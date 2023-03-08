@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") -%> 
+
+<h1>Hello</h1>
+<p><%= intro %> </p>
+ 
+<% pos.forEach(function(ele) { %>
+      
+      
+       <h1><%= ele.name %> </h1>
+         
+       <% if(ele.bdy.length > 100) { %>
+
+       <p><%= ele.bdy.substring(0,100)+"..." %> <a href="/posts/<%=ele._id %>" >Read More</a></p> 
+       
+       <% } else { %>   
+            
+            <!-- this is important to write else in same scriplet tag -->
+            
+            <p><%= ele.bdy %></p> 
+            
+            <% } %>  
+      <%   });  %> 
+
+<%- include("partials/footer.ejs") -%> 
